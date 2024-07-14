@@ -1,10 +1,10 @@
 import { Router } from "express";
-import carController from "../controllers/carController";
+import veiculoController from "../controllers/carController";
 
 const carRouter = Router();
 
-carRouter.get("/showAll", carController.showAll);
+carRouter.get("/showAll", veiculoController.showAll);
 
-carRouter.post("/new", carController.newCar);
+carRouter.post("/new", veiculoController.newCar);
 
 export default carRouter;

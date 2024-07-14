@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { Car } from "../models/car";
-import carServices from "../services/carSerrvices";
+import { Car } from "../models/veiculo";
+import carServices from "../services/carServices";
 
 const carController = {
     showAll : async (_req: Request, res: Response)=>{
@@ -17,8 +17,8 @@ const carController = {
     },
     newCar: async (req: Request, res: Response)=>{
         try{
-            const {id, placa, modelo, marca} = req.body;
-            const carInstance = new Car(id, placa, modelo, marca);
+            const {id, placa, modelo, marca, anoFab, eixos, cor, numFrota} = req.body;
+            const carInstance = new Car(id, placa, modelo, marca, anoFab, eixos, cor, numFrota);
             const newCar = await carServices.newCar(carInstance);
             res.status(201).json(newCar);
         }catch(error){
