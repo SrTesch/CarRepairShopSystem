@@ -3,7 +3,7 @@ import React from "react";
 const Footer = props =>{
     return(
         <footer>
-            <p>CopyWrite symbol Tesch Solutions</p>
+            <p>&copy; Tesch Solutions - 2024</p>
         </footer>
     )
 }
