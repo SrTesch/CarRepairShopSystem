@@ -1,6 +1,7 @@
 import express, { Request, Response} from 'express';
 import { createServer } from 'http';
 import carRouter from './routes/carRoutes';
+import funcRouter from './routes/funcRoutes';
 const app = express();
 const server = createServer(app);
 const port = 3001;
@@ -23,6 +24,8 @@ app.get('/', (req: Request, res: Response) =>{
 
 app.use('/cars', carRouter);
 
+app.use('/funcs', funcRouter);
+
 server.listen(port, () =>{
-	console.log(`App linstening at http://localhost:${port}`);
+	console.log(`I'm Beautiful at http://localhost:${port}`);
 });

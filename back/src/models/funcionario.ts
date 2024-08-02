@@ -1,4 +1,4 @@
-export class Mecanico{
+export class Funcionario{
     public id?:Number;
     public nome?: string;
     public matricula?: string;
