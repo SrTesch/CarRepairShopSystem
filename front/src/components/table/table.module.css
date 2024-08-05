@@ -1,0 +1,36 @@
+.title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 400px;
+    padding: .4em .8em;
+    background-color: #242424;
+    color: white;
+    border-radius: 7px 7px 0px 0px;
+}
+
+.titleThing{
+    flex: 1;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 400px;
+    padding: .4em .8em;
+    color: black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.rowThing{
+    flex: 1;
+}
+
+.row:nth-of-type(2n){
+    background-color: #a8a8a8;
+}
