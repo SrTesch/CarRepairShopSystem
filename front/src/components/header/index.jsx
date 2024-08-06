@@ -8,11 +8,11 @@ const Header = props => {
         <header className={styles.header}>
             <h1>{title}</h1>
             <div className={styles.links}>
-                {links.map((link, index) => (
-                            <a href={link.url} className={`${styles.bn3637} ${styles.bn38}`}>
-                                {link.name}
-                            </a>
-                    ))}
+                {links.map((link) => (
+                    <a href={link.url} className={`${styles.bn3637} ${styles.bn38}`}>
+                        {link.name}
+                    </a>
+                ))}
             </div>
         </header>
     );
