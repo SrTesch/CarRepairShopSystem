@@ -75,7 +75,7 @@ const funcServices ={
     }
     ,
     deleteFunc: async (id : Number)=>{
-        console.log(`Deletando veículo de id: ${id} do banco de dados`);
+        console.log(`Deletando Funcionario de id: ${id} do banco de dados`);
         try{
             const conn = await pool.getConnection();
             const [result] = await conn.execute<OkPacket>(`delete from Funcionario where id = ?;`, [id])

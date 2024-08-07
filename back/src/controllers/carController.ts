@@ -25,6 +25,31 @@ const carController = {
             console.log(error);
             return res.status(500).json({msg:"Erro ao tentar inserir este carro"})
         }
+    },
+    updateCar: async (req: Request, res: Response)=>{
+        try{
+            const id = req.params;
+            const updates: Partial<Car> = req.body;
+            const result = await carServices.updateCar(Number(id), updates);
+            if (result.success) {
+                return res.status(200).json({ msg: "Veículo atualizado com sucesso", affectedRows: result.affectedRows });
+            } else 
+                return res.status(400).json({ msg: "Erro ao atualizar dados do Veículo" });
+            
+        }catch(error){
+            console.log(error);
+            return res.status(500).json({msg:"Erro ao atualizar veículo"});
+        }
+    },
+    deleteCar : async (req : Request, res: Response) =>{
+        try {
+            const id = req.params;
+            const result = await carServices.deleteCar(Number(id));
+            return res.status(200).json({msg: "Carro deletado com sucesso"});
+        }catch(error){
+            console.log(error)
+            return res.status(500).json({msg: "Erro ao deletar veículo"})
+        }
     }
 }
 
